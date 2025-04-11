@@ -1,20 +1,19 @@
 class HangmanGame {
-    field Array words;       // Array of words (20 entries)
-    field Array clues;       // Array of corresponding clues
+    field Array words;
+    field Array clues;
     field Array guessedLetters;
     field String currentWord;
     field String currentClue;
     field int mistakes;
-    field int player1Score;  // Player 1's score
-    field int player2Score;  // Player 2's score
-    field int currentPlayer; // Tracks current player (1 or 2)
+    field int player1Score;
+    field int player2Score;
+    field int currentPlayer;
 
     constructor HangmanGame new() {
         let words = Array.new(20);
         let clues = Array.new(20);
         let guessedLetters = Array.new(26);
         
-        // Initialize 20 words and clues
         let words[1] = "PROGRAM";     
         let clues[1] = "Set of instructions for a computer";
         let words[0] = "COMPUTER";    
@@ -65,7 +64,6 @@ class HangmanGame {
         var int i;
         var boolean success;
         
-        // Player 1's turn
         let currentPlayer = 1;
         let i = 0;
         while (i < 10) {
@@ -86,7 +84,6 @@ class HangmanGame {
             let i = i + 1;
         }
         
-        // Player 2's turn
         let currentPlayer = 2;
         let i = 0;
         while (i < 10) {
@@ -107,7 +104,6 @@ class HangmanGame {
             let i = i + 1;
         }
         
-        // Display final results
         do Screen.clearScreen();
         do Output.moveCursor(10, 25);
         do Output.printString("GAME OVER!");
@@ -173,12 +169,10 @@ class HangmanGame {
             let i = i + 1;
         }
         
-        // Draw clue
         do Output.moveCursor(17, 0);
         do Output.printString("Clue: ");
         do Output.printString(currentClue);
         
-        // Draw guessed letters
         do Output.moveCursor(19, 0);
         do Output.printString("Guessed letters: ");
         let i = 0;
@@ -190,7 +184,6 @@ class HangmanGame {
             let i = i + 1;
         }
         
-        // Draw current player's score
         do Output.moveCursor(21, 0);
         do Output.printString("Player ");
         do Output.printInt(currentPlayer);
@@ -244,16 +237,14 @@ class HangmanGame {
         var int i;
         var boolean found;
         
-        if (key > 96) { // Convert to uppercase
+        if (key > 96) {
             let upperKey = key - 32;
         } else {
             let upperKey = key;
         }
         
-        // Mark letter as guessed
         let guessedLetters[upperKey - 65] = 1;
         
-        // Check if letter is in word
         let found = false;
         let i = 0;
         while (i < currentWord.length()) {
