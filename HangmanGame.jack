@@ -1,0 +1,305 @@
+class HangmanGame {
+    field Array words;       // Array of words (20 entries)
+    field Array clues;       // Array of corresponding clues
+    field Array guessedLetters;
+    field String currentWord;
+    field String currentClue;
+    field int mistakes;
+    field int player1Score;  // Player 1's score
+    field int player2Score;  // Player 2's score
+    field int currentPlayer; // Tracks current player (1 or 2)
+
+    constructor HangmanGame new() {
+        let words = Array.new(20);
+        let clues = Array.new(20);
+        let guessedLetters = Array.new(26);
+        
+        // Initialize 20 words and clues
+        let words[1] = "PROGRAM";     
+        let clues[1] = "Set of instructions for a computer";
+        let words[0] = "COMPUTER";    
+        let clues[0] = "Electronic device for processing data";
+        let words[2] = "KEYBOARD";    
+        let clues[2] = "Input device with letters";
+        let words[3] = "MONITOR";     
+        let clues[3] = "Display device";    
+        let words[4] = "MEMORY";      
+        let clues[4] = "Stores data and programs";
+        let words[5] = "ALGORITHM";   
+        let clues[5] = "A step-by-step problem-solving procedure";
+        let words[6] = "SOFTWARE";    
+        let clues[6] = "Collection of data/programs used by computers";
+        let words[7] = "HARDWARE";
+        let clues[7] = "Physical components of a computer system";
+        let words[8] = "MOUSE";       
+        let clues[8] = "Pointing device for computer interaction";
+        let words[9] = "PRINTER";     
+        let clues[9] = "Produces hard copies of digital documents";
+        let words[10] = "DATABASE";   
+        let clues[10] = "Structured electronic data collection";
+        let words[11] = "NETWORK";    
+        let clues[11] = "System connecting multiple computers";
+        let words[12] = "SECURITY";   
+        let clues[12] = "Measures to protect data/systems";
+        let words[13] = "INTERNET";   
+        let clues[13] = "Global network of devices";
+        let words[14] = "BROWSER";    
+        let clues[14] = "Software to access the World Wide Web";
+        let words[15] = "SERVER";     
+        let clues[15] = "Computer providing data to others";
+        let words[16] = "FIREWALL";   
+        let clues[16] = "Network traffic security system";
+        let words[17] = "ROUTER";     
+        let clues[17] = "Device connecting multiple networks";
+        let words[18] = "CLOUD";      
+        let clues[18] = "Remote servers for data storage/processing";
+        let words[19] = "ENCRYPTION"; 
+        let clues[19] = "Process of converting data to secure format";
+        
+        let player1Score = 0;
+        let player2Score = 0;
+        return this;
+    }
+
+    method void run() {
+        var int i;
+        var boolean success;
+        
+        // Player 1's turn
+        let currentPlayer = 1;
+        let i = 0;
+        while (i < 10) {
+            let currentWord = selectRandomWord();
+            do Screen.clearScreen();
+            let success = playWord();
+            
+            if (success) {
+                let player1Score = player1Score + 1;
+            }
+            
+            do Output.moveCursor(10, 25);
+            do Output.printString("Player 1 Score: ");
+            do Output.printInt(player1Score);
+            do Output.println();
+            do Output.printString("Press any key for next word...");
+            do Keyboard.readChar();
+            let i = i + 1;
+        }
+        
+        // Player 2's turn
+        let currentPlayer = 2;
+        let i = 0;
+        while (i < 10) {
+            let currentWord = selectRandomWord();
+            do Screen.clearScreen();
+            let success = playWord();
+            
+            if (success) {
+                let player2Score = player2Score + 1;
+            }
+            
+            do Output.moveCursor(10, 25);
+            do Output.printString("Player 2 Score: ");
+            do Output.printInt(player2Score);
+            do Output.println();
+            do Output.printString("Press any key for next word...");
+            do Keyboard.readChar();
+            let i = i + 1;
+        }
+        
+        // Display final results
+        do Screen.clearScreen();
+        do Output.moveCursor(10, 25);
+        do Output.printString("GAME OVER!");
+        do Output.println();
+        do Output.printString("Player 1 Final Score: ");
+        do Output.printInt(player1Score);
+        do Output.println();
+        do Output.printString("Player 2 Final Score: ");
+        do Output.printInt(player2Score);
+        do Output.println();
+        do Output.println();
+        do Output.printString("Press any key to exit...");
+        do Keyboard.readChar();
+        
+        return;
+        }
+
+    method String selectRandomWord() {
+        var int index;
+        let index = Random.randRange(20);
+        let currentClue = clues[index];
+        return words[index];
+    }
+
+    method boolean playWord() {
+        var boolean wordCompleted;
+        var char key;
+        
+        let wordCompleted = false;
+        let mistakes = 0;
+        do resetGuessedLetters();
+        
+        while ((~wordCompleted) & (mistakes < 7)) {
+            do drawGame();
+            let key = Keyboard.readChar();
+            
+            if (isValidGuess(key)) {
+                do processGuess(key);
+                let wordCompleted = checkWordComplete();
+            }
+        }
+        
+        return wordCompleted;
+        }
+
+    method void drawGame() {
+        var int i;
+        
+        do Screen.clearScreen();
+        do drawHangman();
+        
+        // Draw word
+        let i = 0;
+        do Output.moveCursor(15, 0);
+        do Output.printString("Word: ");
+        while (i < currentWord.length()) {
+            if (isLetterGuessed(currentWord.charAt(i))) {
+                do Output.printChar(currentWord.charAt(i));
+            } else {
+                do Output.printChar(95); // underscore
+            }
+            do Output.printChar(32); // space
+            let i = i + 1;
+        }
+        
+        // Draw clue
+        do Output.moveCursor(17, 0);
+        do Output.printString("Clue: ");
+        do Output.printString(currentClue);
+        
+        // Draw guessed letters
+        do Output.moveCursor(19, 0);
+        do Output.printString("Guessed letters: ");
+        let i = 0;
+        while (i < 26) {
+            if (guessedLetters[i] = 1) {
+                do Output.printChar(65 + i);
+                do Output.printChar(32);
+            }
+            let i = i + 1;
+        }
+        
+        // Draw current player's score
+        do Output.moveCursor(21, 0);
+        do Output.printString("Player ");
+        do Output.printInt(currentPlayer);
+        do Output.printString(" Score: ");
+        if (currentPlayer = 1) {
+            do Output.printInt(player1Score);
+        } else {
+            do Output.printInt(player2Score);
+        }
+        
+        return;
+    }
+
+    method void drawHangman() {
+        // Base
+        if (mistakes > 0) {
+            do Screen.drawLine(100, 150, 200, 150);
+        }
+        // Pole
+        if (mistakes > 1) {
+            do Screen.drawLine(150, 150, 150, 50);
+            do Screen.drawLine(150, 50, 180, 50);
+        }
+        // Head
+        if (mistakes > 2) {
+            do Screen.drawCircle(180, 65, 15);
+        }
+        // Body
+        if (mistakes > 3) {
+            do Screen.drawLine(180, 80, 180, 110);
+        }
+        // Arms
+        if (mistakes > 4) {
+            do Screen.drawLine(180, 90, 160, 100);
+            do Screen.drawLine(180, 90, 200, 100);
+        }
+        // Legs
+        if (mistakes > 5) {
+            do Screen.drawLine(180, 110, 160, 130);
+            do Screen.drawLine(180, 110, 200, 130);
+        }
+        return;
+    }
+
+    method boolean isValidGuess(char key) {
+        return ((key > 64) & (key < 91)) | ((key > 96) & (key < 123));
+    }
+
+    method void processGuess(char key) {
+        var char upperKey;
+        var int i;
+        var boolean found;
+        
+        if (key > 96) { // Convert to uppercase
+            let upperKey = key - 32;
+        } else {
+            let upperKey = key;
+        }
+        
+        // Mark letter as guessed
+        let guessedLetters[upperKey - 65] = 1;
+        
+        // Check if letter is in word
+        let found = false;
+        let i = 0;
+        while (i < currentWord.length()) {
+            if (currentWord.charAt(i) = upperKey) {
+                let found = true;
+            }
+            let i = i + 1;
+        }
+        
+        if (~found) {
+            let mistakes = mistakes + 1;
+        }
+        return;
+    }
+
+    method boolean checkWordComplete() {
+        var int i;
+        let i = 0;
+        while (i < currentWord.length()) {
+            if (~isLetterGuessed(currentWord.charAt(i))) {
+                return false;
+            }
+            let i = i + 1;
+        }
+        return true;
+    }
+
+    method boolean isLetterGuessed(char letter) {
+        return guessedLetters[letter - 65] = 1;
+    }
+
+    method void resetGuessedLetters() {
+        var int i;
+        let i = 0;
+        while (i < 26) {
+            let guessedLetters[i] = 0;
+            let i = i + 1;
+        }
+        return;
+    }
+
+    method void dispose() {
+        do words.dispose();
+        do clues.dispose();
+        do guessedLetters.dispose();
+        do Memory.deAlloc(this);
+        return;
+    }
+}
