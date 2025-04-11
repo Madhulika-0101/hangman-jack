@@ -7,5 +7,3 @@ HangmanGame.jack
 Random.jack
 Time.jack
 ```
-
-HangmanGame.jack: (Backbone Class)
