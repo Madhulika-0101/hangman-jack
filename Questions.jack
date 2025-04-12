@@ -1,0 +1,556 @@
+class Questions {
+
+	field Array easyGeo;
+	field Array easyGeoClues;
+	field Array mediumGeo;
+	field Array mediumGeoClues;
+	field Array hardGeo;
+	field Array hardGeoClues;
+	field Array easyGK;
+	field Array easyGKClues;
+	field Array mediumGK;
+	field Array mediumGKClues;
+	field Array hardGK;
+	field Array hardGKClues;
+	field Array easyTech;
+	field Array easyTechClues;
+	field Array mediumTech;
+	field Array mediumTechClues;
+	field Array hardTech;
+	field Array hardTechClues;
+
+	constructor Questions new() {
+
+		let easyGeo = Array.new(20);
+		let easyGeoClues = Array.new(20);
+		let mediumGeo = Array.new(20);
+		let mediumGeoClues = Array.new(20);
+		let hardGeo = Array.new(20);
+		let hardGeoClues = Array.new(20);
+		let easyGK = Array.new(20);
+		let easyGKClues = Array.new(20);
+		let mediumGK = Array.new(20);
+		let mediumGKClues = Array.new(20);
+		let hardGK = Array.new(20);
+		let hardGKClues = Array.new(20);
+		let easyTech = Array.new(20);
+		let easyTechClues = Array.new(20);
+		let mediumTech = Array.new(20);
+		let mediumTechClues = Array.new(20);
+		let hardTech = Array.new(20);
+		let hardTechClues = Array.new(20);
+
+                return this;
+
+	}
+
+
+
+	// Accessor methods for Geography arrays
+	method Array easyGeo() { 
+
+		//Initializing words and clues for the easy version of questions based on Geography
+		let easyGeo[0] = "AFRICA";
+		let easyGeo[1] = "NILE";
+		let easyGeo[2] = "EVEREST";
+		let easyGeo[3] = "SAHARA";
+		let easyGeo[4] = "ASIA";
+		let easyGeo[5] = "INDIA";
+		let easyGeo[6] = "PACIFIC";
+		let easyGeo[7] = "EUROPE";
+		let easyGeo[8] = "AUSTRALIA";
+		let easyGeo[9] = "BRAZIL";
+		let easyGeo[10] = "JAPAN";
+		let easyGeo[11] = "NORTH";
+		let easyGeo[12] = "ARCTIC";
+		let easyGeo[13] = "SOUTH";
+		let easyGeo[14] = "LONDON";
+		let easyGeo[15] = "DELHI";
+		let easyGeo[16] = "MAP";
+		let easyGeo[17] = "ISLAND";
+		let easyGeo[18] = "RIVER";
+		let easyGeo[19] = "MOUNTAIN";
+
+		return easyGeo; 
+
+	}
+	method Array easyGeoClues() { 
+
+		//Initializing words and clues for the easy version of questions based on Geography
+		let easyGeoClues[0] = "Second-largest continent";
+		let easyGeoClues[1] = "Longest river in the world";
+		let easyGeoClues[2] = "Tallest mountain on Earth";
+		let easyGeoClues[3] = "Largest hot desert in the world";
+		let easyGeoClues[4] = "Largest continent";
+		let easyGeoClues[5] = "Country known for the Taj Mahal";
+		let easyGeoClues[6] = "Largest ocean on Earth";
+		let easyGeoClues[7] = "Home to countries like France and Germany";
+		let easyGeoClues[8] = "Smallest continent and a country";
+		let easyGeoClues[9] = "Country known for the Amazon rainforest";
+		let easyGeoClues[10] = "Island nation in East Asia";
+		let easyGeoClues[11] = "Direction opposite of South";
+		let easyGeoClues[12] = "Ocean around the North Pole";
+		let easyGeoClues[13] = "Direction opposite of North";
+		let easyGeoClues[14] = "Capital city of the United Kingdom";
+		let easyGeoClues[15] = "Capital city of India";
+		let easyGeoClues[16] = "Used to represent geographical locations";
+		let easyGeoClues[17] = "Land surrounded by water";
+		let easyGeoClues[18] = "Natural stream of water flowing to the sea";
+		let easyGeoClues[19] = "High elevation landform";
+
+		return easyGeoClues; 
+
+	}
+
+	method Array mediumGeo() { 
+
+		//Initializing the words and clues for the medium version of questions based on Geography
+		let mediumGeo[0] = "ANDES";
+		let mediumGeo[1] = "MEDITERRANEAN";
+		let mediumGeo[2] = "SIBERIA";
+		let mediumGeo[3] = "KILIMANJARO";
+		let mediumGeo[4] = "ALPS";
+		let mediumGeo[5] = "THAR";
+		let mediumGeo[6] = "INDUS";
+		let mediumGeo[7] = "GANGES";
+		let mediumGeo[8] = "BAIKAL";
+		let mediumGeo[9] = "PENINSULA";
+		let mediumGeo[10] = "CANYON";
+		let mediumGeo[11] = "HIMALAYAS";
+		let mediumGeo[12] = "AMAZON";
+		let mediumGeo[13] = "DELTA";
+		let mediumGeo[14] = "MANGROVE";
+		let mediumGeo[15] = "CARIBBEAN";
+		let mediumGeo[16] = "BASIN";
+		let mediumGeo[17] = "VOLCANO";
+		let mediumGeo[18] = "TUNDRA";
+		let mediumGeo[19] = "MONSOON";
+
+		return mediumGeo; 
+
+	}
+
+	method Array mediumGeoClues() { 
+
+		//Initializing the words and clues for the medium version of questions based on Geography
+		let mediumGeoClues[0] = "Mountain range in South America";
+		let mediumGeoClues[1] = "Sea between Europe and Africa";
+		let mediumGeoClues[2] = "Cold region in Russia";
+		let mediumGeoClues[3] = "Tallest mountain in Africa";
+		let mediumGeoClues[4] = "Mountain range in Europe";
+		let mediumGeoClues[5] = "Desert in northwest India";
+		let mediumGeoClues[6] = "Major river in South Asia";
+		let mediumGeoClues[7] = "Sacred river in India";
+		let mediumGeoClues[8] = "Deepest freshwater lake";
+		let mediumGeoClues[9] = "Land surrounded by water on three sides";
+		let mediumGeoClues[10] = "Deep valley with steep sides";
+		let mediumGeoClues[11] = "Mountain range where Everest is located";
+		let mediumGeoClues[12] = "River with the largest discharge volume";
+		let mediumGeoClues[13] = "Landform at river mouth";
+		let mediumGeoClues[14] = "Coastal tree ecosystem";
+		let mediumGeoClues[15] = "Region with many islands and beaches";
+		let mediumGeoClues[16] = "Low area drained by a river";
+		let mediumGeoClues[17] = "Mountain that can erupt lava";
+		let mediumGeoClues[18] = "Cold, treeless biome";
+		let mediumGeoClues[19] = "Seasonal wind and rain pattern in South Asia";
+
+		return mediumGeoClues; 
+
+	}
+
+	method Array hardGeo() { 
+
+		//Initializing words and clues for the hard version of questions related to Geography
+		let hardGeo[0] = "ARCHIPELAGO";
+		let hardGeo[1] = "ANTARCTICA";
+		let hardGeo[2] = "ATLASMOUNTAINS";
+		let hardGeo[3] = "KRAKATOA";
+		let hardGeo[4] = "ISTHMUS";
+		let hardGeo[5] = "PERMAFROST";
+		let hardGeo[6] = "CATARACT";
+		let hardGeo[7] = "BIOME";
+		let hardGeo[8] = "GEOTHERMAL";
+		let hardGeo[9] = "TROPICANCER";
+		let hardGeo[10] = "TROPICCAPRICORN";
+		let hardGeo[11] = "EROSION";
+		let hardGeo[12] = "LITHOSPHERE";
+		let hardGeo[13] = "AQUIFER";
+		let hardGeo[14] = "ESTUARY";
+		let hardGeo[15] = "SEISMIC";
+		let hardGeo[16] = "CORIOLIS";
+		let hardGeo[17] = "TOPOGRAPHY";
+		let hardGeo[18] = "LONGITUDE";
+		let hardGeo[19] = "LATITUDE";
+
+		return hardGeo; 
+
+	}
+
+	method Array hardGeoClues() { 
+
+		//Initializing words and clues for the hard version of questions related to Geography
+		let hardGeoClues[0] = "Group of islands";
+		let hardGeoClues[1] = "Coldest continent";
+		let hardGeoClues[2] = "Mountain range in northwest Africa";
+		let hardGeoClues[3] = "Volcanic island in Indonesia";
+		let hardGeoClues[4] = "Narrow land connecting two larger landmasses";
+		let hardGeoClues[5] = "Ground that remains frozen year-round";
+		let hardGeoClues[6] = "Large waterfall or rapid";
+		let hardGeoClues[7] = "Large ecological area with specific climate and organisms";
+		let hardGeoClues[8] = "Heat energy from the Earth";
+		let hardGeoClues[9] = "Latitude line north of the Equator";
+		let hardGeoClues[10] = "Latitude line south of the Equator";
+		let hardGeoClues[11] = "Wearing away of land by wind or water";
+		let hardGeoClues[12] = "Earth's outer layer including the crust";
+		let hardGeoClues[13] = "Underground water storage";
+		let hardGeoClues[14] = "Where river meets the sea";
+		let hardGeoClues[15] = "Related to earthquakes";
+		let hardGeoClues[16] = "Effect that causes moving air to curve";
+		let hardGeoClues[17] = "Arrangement of natural and artificial features of land";
+		let hardGeoClues[18] = "Vertical geographic coordinate";
+		let hardGeoClues[19] = "Horizontal geographic coordinate";
+
+		return hardGeoClues; 
+
+	}
+	
+	// Accessor methods for General Knowledge arrays
+	method Array easyGK() { 
+
+		//Initializing words and clues for the easy version for questions based on General Knowledge
+		let easyGK[0] = "WATER";
+		let easyGK[1] = "SUN";
+		let easyGK[2] = "MOON";
+		let easyGK[3] = "TREE";
+		let easyGK[4] = "FISH";
+		let easyGK[5] = "BOOK";
+		let easyGK[6] = "PEN";
+		let easyGK[7] = "SCHOOL";
+		let easyGK[8] = "APPLE";
+		let easyGK[9] = "DOG";
+		let easyGK[10] = "CAT";
+		let easyGK[11] = "RAIN";
+		let easyGK[12] = "MILK";
+		let easyGK[13] = "CLOCK";
+		let easyGK[14] = "CHAIR";
+		let easyGK[15] = "TABLE";
+		let easyGK[16] = "HOUSE";
+		let easyGK[17] = "CAR";
+		let easyGK[18] = "ROAD";
+		let easyGK[19] = "FOOD";
+
+		return easyGK; 
+
+	}
+
+	method Array easyGKClues() { 
+
+		//Initializing words and clues for the easy version for questions based on General Knowledge
+		let easyGKClues[0] = "Liquid essential for life";
+		let easyGKClues[1] = "Star at the center of our solar system";
+		let easyGKClues[2] = "Earth's natural satellite";
+		let easyGKClues[3] = "Grows in forests and provides oxygen";
+		let easyGKClues[4] = "Animal that lives in water";
+		let easyGKClues[5] = "Used for reading and learning";
+		let easyGKClues[6] = "Used to write";
+		let easyGKClues[7] = "Place where students learn";
+		let easyGKClues[8] = "Red or green fruit that keeps doctors away";
+		let easyGKClues[9] = "Man’s best friend";
+		let easyGKClues[10] = "Popular household pet that purrs";
+		let easyGKClues[11] = "Falls from clouds";
+		let easyGKClues[12] = "White drink from cows";
+		let easyGKClues[13] = "Tells the time";
+		let easyGKClues[14] = "Used to sit on";
+		let easyGKClues[15] = "Used to eat or work on";
+		let easyGKClues[16] = "Place where people live";
+		let easyGKClues[17] = "Vehicle with four wheels";
+		let easyGKClues[18] = "Path for cars and trucks";
+		let easyGKClues[19] = "Something you eat";
+
+		return easyGKClues; 
+
+	}
+
+	method Array mediumGK() { 
+
+		//Initializing words and values for the medium version of the questions based on General Knowlegde
+		let mediumGK[0] = "INVENTOR";
+		let mediumGK[1] = "GRAVITY";
+		let mediumGK[2] = "PLANET";
+		let mediumGK[3] = "LANGUAGE";
+		let mediumGK[4] = "HISTORY";
+		let mediumGK[5] = "SCIENCE";
+		let mediumGK[6] = "PYRAMID";
+		let mediumGK[7] = "ECLIPSE";
+		let mediumGK[8] = "CURRENCY";
+		let mediumGK[9] = "CITIZEN";
+		let mediumGK[10] = "DEMOCRACY";
+		let mediumGK[11] = "CAPITAL";
+		let mediumGK[12] = "EQUATOR";
+		let mediumGK[13] = "METEOR";
+		let mediumGK[14] = "ORBIT";
+		let mediumGK[15] = "POLITICS";
+		let mediumGK[16] = "GOVERNMENT";
+		let mediumGK[17] = "GLACIER";
+		let mediumGK[18] = "JOURNALIST";
+		let mediumGK[19] = "ECONOMY";
+
+		return mediumGK; 
+
+	}
+
+	method Array mediumGKClues() { 
+
+		//Initializing words and values for the medium version of the questions based on General Knowlegde
+		let mediumGKClues[0] = "A person who creates new devices or ideas";
+		let mediumGKClues[1] = "Force that pulls objects toward Earth";
+		let mediumGKClues[2] = "Orbits a star, like Earth";
+		let mediumGKClues[3] = "Used for communication";
+		let mediumGKClues[4] = "Study of past events";
+		let mediumGKClues[5] = "Systematic study of the natural world";
+		let mediumGKClues[6] = "Triangular structure in Egypt";
+		let mediumGKClues[7] = "Sun or moon gets blocked";
+		let mediumGKClues[8] = "Official money of a country";
+		let mediumGKClues[9] = "Legal member of a country";
+		let mediumGKClues[10] = "Government by the people";
+		let mediumGKClues[11] = "Main city of a country";
+		let mediumGKClues[12] = "Imaginary line around Earth’s middle";
+		let mediumGKClues[13] = "Space rock that burns in atmosphere";
+		let mediumGKClues[14] = "Path of one object around another";
+		let mediumGKClues[15] = "Activities of governance";
+		let mediumGKClues[16] = "System of ruling a country";
+		let mediumGKClues[17] = "Large mass of ice that moves slowly";
+		let mediumGKClues[18] = "Person who reports news";
+		let mediumGKClues[19] = "System of production and trade";
+
+		return mediumGKClues; 
+
+	}
+
+	method Array hardGK() { 
+
+		//Initializing words and values for the hard version of questions based on General Knowledge
+		let hardGK[0] = "PHILOSOPHY";
+		let hardGK[1] = "NEUTRON";
+		let hardGK[2] = "ATOM";
+		let hardGK[3] = "THEOREM";
+		let hardGK[4] = "EVOLUTION";
+		let hardGK[5] = "GENETICS";
+		let hardGK[6] = "SYMMETRY";
+		let hardGK[7] = "SYMBOLISM";
+		let hardGK[8] = "ALGORITHM";
+		let hardGK[9] = "SATELLITE";
+		let hardGK[10] = "BIODIVERSITY";
+		let hardGK[11] = "MAGNETISM";
+		let hardGK[12] = "RADIATION";
+		let hardGK[13] = "EQUATION";
+		let hardGK[14] = "LITERATURE";
+		let hardGK[15] = "ARCHAEOLOGY";
+		let hardGK[16] = "PHYSICS";
+		let hardGK[17] = "CHEMISTRY";
+		let hardGK[18] = "UNIVERSE";
+		let hardGK[19] = "COSMOLOGY";
+
+		return hardGK; 
+
+	}
+
+	method Array hardGKClues() { 
+
+		//Initializing words and values for the hard version of questions based on General Knowledge
+		let hardGKClues[0] = "Study of fundamental nature of knowledge and existence";
+		let hardGKClues[1] = "Particle with no charge found in atoms";
+		let hardGKClues[2] = "Smallest unit of matter";
+		let hardGKClues[3] = "Proven statement in mathematics";
+		let hardGKClues[4] = "Process by which species change over time";
+		let hardGKClues[5] = "Study of heredity";
+		let hardGKClues[6] = "Balanced proportions on both sides";
+		let hardGKClues[7] = "Use of symbols to represent ideas";
+		let hardGKClues[8] = "Step-by-step method to solve a problem";
+		let hardGKClues[9] = "Object that orbits planets or Earth";
+		let hardGKClues[10] = "Variety of life in the world or habitat";
+		let hardGKClues[11] = "Force that attracts certain metals";
+		let hardGKClues[12] = "Energy that travels as waves or particles";
+		let hardGKClues[13] = "Mathematical statement with equality";
+		let hardGKClues[14] = "Written works, especially artistic ones";
+		let hardGKClues[15] = "Study of ancient cultures via artifacts";
+		let hardGKClues[16] = "Study of matter and energy";
+		let hardGKClues[17] = "Study of substances and reactions";
+		let hardGKClues[18] = "All space, time, and matter";
+		let hardGKClues[19] = "Study of the origin and structure of the universe";
+
+		return hardGKClues; 
+
+	}
+	
+	// Accessor methods for Technology arrays
+	method Array easyTech() { 
+
+		//Initializing words and clues for the easy version questions based on Technology
+		let easyTech[0] = "COMPUTER";
+		let easyTech[1] = "PROGRAM";
+		let easyTech[2] = "KEYBOARD";
+		let easyTech[3] = "MONITOR";
+		let easyTech[4] = "MEMORY";
+		let easyTech[5] = "PRINTER";
+		let easyTech[6] = "MOUSE";
+		let easyTech[7] = "SOFTWARE";
+		let easyTech[8] = "HARDWARE";
+		let easyTech[9] = "ALGORITHM";
+		let easyTech[10] = "DATABASE";
+		let easyTech[11] = "NETWORK";
+		let easyTech[12] = "PROCESSOR";
+		let easyTech[13] = "STORAGE";
+		let easyTech[14] = "BROWSER";
+		let easyTech[15] = "CACHE";
+		let easyTech[16] = "FIREWALL";
+		let easyTech[17] = "ENCRYPTION";
+		let easyTech[18] = "CLOUD";
+		let easyTech[19] = "ROUTER";
+
+		return easyTech; 
+
+	}
+
+	method Array easyTechClues() { 
+
+		//Initializing words and clues for the easy version questions based on Technology
+		let easyTechClues[0] = "Electronic device for processing data";
+		let easyTechClues[1] = "Set of instructions for a computer";
+		let easyTechClues[2] = "Input device with letters";
+		let easyTechClues[3] = "Display device";
+		let easyTechClues[4] = "Stores data and programs";
+		let easyTechClues[5] = "Device that produces hard copies of documents";
+		let easyTechClues[6] = "Pointing device used to interact with a computer";
+		let easyTechClues[7] = "Programs and operating information for a computer";
+		let easyTechClues[8] = "Physical components of a computer system";
+		let easyTechClues[9] = "Step-by-step procedure to solve a problem";
+		let easyTechClues[10] = "Organized collection of structured information";
+		let easyTechClues[11] = "System of interconnected computers";
+		let easyTechClues[12] = "Brain of the computer that executes instructions";
+		let easyTechClues[13] = "Medium used to store digital data permanently";
+		let easyTechClues[14] = "Software used to access the internet";
+		let easyTechClues[15] = "Small, fast memory that stores frequently used data";
+		let easyTechClues[16] = "Security system that controls network traffic";
+		let easyTechClues[17] = "Process of converting data into a secure format";
+		let easyTechClues[18] = "Online storage and computing service";
+		let easyTechClues[19] = "Device that directs data packets across networks";
+
+		return easyTechClues; 
+
+	}
+
+	method Array mediumTech() { 
+
+		//Initializing words and clues for the medium version questions based on Technology
+		let mediumTech[0] = "BITCOIN";
+		let mediumTech[1] = "CYBERSEC";
+		let mediumTech[2] = "BOOLEAN";
+		let mediumTech[3] = "PYTHON";
+		let mediumTech[4] = "DEBUGGER";
+		let mediumTech[5] = "TERMINAL";
+		let mediumTech[6] = "MALWARE";
+		let mediumTech[7] = "GIGABYTE";
+		let mediumTech[8] = "VIRTUAL";
+		let mediumTech[9] = "COMMAND";
+		let mediumTech[10] = "UPLOAD";
+		let mediumTech[11] = "DOWNLOAD";
+		let mediumTech[12] = "KEYLOGGER";
+		let mediumTech[13] = "ANALYTICS";
+		let mediumTech[14] = "FIRMWARE";
+		let mediumTech[15] = "ETHERNET";
+		let mediumTech[16] = "IPADDRESS";
+		let mediumTech[17] = "BACKUP";
+		let mediumTech[18] = "DRIVER";
+		let mediumTech[19] = "SPREADSHEET";
+
+		return mediumTech; 
+
+	}
+
+	method Array mediumTechClues() { 
+
+		//Initializing words and clues for the medium version questions based on Technology
+		let mediumTechClues[0] = "A form of digital currency";
+		let mediumTechClues[1] = "Short for cyber security";
+		let mediumTechClues[2] = "Data type with only true or false values";
+		let mediumTechClues[3] = "A high-level programming language";
+		let mediumTechClues[4] = "Tool used to identify and fix code errors";
+		let mediumTechClues[5] = "Text-based interface to the system";
+		let mediumTechClues[6] = "Malicious software";
+		let mediumTechClues[7] = "Unit of digital information storage";
+		let mediumTechClues[8] = "Something that is simulated digitally";
+		let mediumTechClues[9] = "Instruction given to a computer";
+		let mediumTechClues[10] = "Transfer data to another system";
+		let mediumTechClues[11] = "Receive data from another system";
+		let mediumTechClues[12] = "Records keystrokes made by a user";
+		let mediumTechClues[13] = "Data analysis to find patterns";
+		let mediumTechClues[14] = "Software permanently stored in hardware";
+		let mediumTechClues[15] = "Wired networking technology";
+		let mediumTechClues[16] = "Unique identifier for a device on a network";
+		let mediumTechClues[17] = "Copy of data stored separately";
+		let mediumTechClues[18] = "Software that controls hardware";
+		let mediumTechClues[19] = "Grid-based file for organizing data";
+
+		return mediumTechClues; 
+
+	}
+
+	method Array hardTech() { 
+
+ 		// Initializing words and clues for the hard version of questions based on Technology
+		let hardTech[0] = "BLOCKCHAIN";
+		let hardTech[1] = "QUANTUM";
+		let hardTech[2] = "OVERFLOW";
+		let hardTech[3] = "CRYPTANALYSIS";
+		let hardTech[4] = "MACHINELEARN";
+		let hardTech[5] = "COMPRESSION";
+		let hardTech[6] = "FIBEROPTICS";
+		let hardTech[7] = "LATENCY";
+		let hardTech[8] = "BITRATE";
+		let hardTech[9] = "DEFRAGMENT";
+		let hardTech[10] = "VIRTUALIZATION";
+		let hardTech[11] = "BANDWIDTH";
+		let hardTech[12] = "PREDICTION";
+		let hardTech[13] = "TOKENIZATION";
+		let hardTech[14] = "MIDDLEWARE";
+		let hardTech[15] = "CONTAINER";
+		let hardTech[16] = "BACKDOOR";
+		let hardTech[17] = "PHISHING";
+		let hardTech[18] = "INJECTION";
+		let hardTech[19] = "BIOMETRICS";
+
+		return hardTech; 
+
+	}
+	
+	method Array hardTechClues() { 
+
+		// Initializing words and clues for the hard version of questions based on Technology
+		let hardTechClues[0] = "Distributed ledger system";
+		let hardTechClues[1] = "Emerging type of advanced computing";
+		let hardTechClues[2] = "Error caused by exceeding storage limits";
+		let hardTechClues[3] = "Cracking encrypted data";
+		let hardTechClues[4] = "AI that learns from data";
+		let hardTechClues[5] = "Reducing file size";
+		let hardTechClues[6] = "Data transmission via light";
+		let hardTechClues[7] = "Delay in data processing";
+		let hardTechClues[8] = "Rate of data transfer";
+		let hardTechClues[9] = "Reorganize storage to improve speed";
+		let hardTechClues[10] = "Simulating hardware with software";
+		let hardTechClues[11] = "Maximum data transfer rate";
+		let hardTechClues[12] = "Forecasting outcomes using data";
+		let hardTechClues[13] = "Replacing sensitive data with symbols";
+		let hardTechClues[14] = "Software that connects applications";
+		let hardTechClues[15] = "Standard unit of software for deployment";
+		let hardTechClues[16] = "Hidden way to bypass security";
+		let hardTechClues[17] = "Fraudulent attempt to get sensitive info";
+		let hardTechClues[18] = "Exploiting data input flaws";
+		let hardTechClues[19] = "Authentication based on biological traits";
+
+		return hardTechClues; 
+
+	}
+
+	
+}
