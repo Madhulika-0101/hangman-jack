@@ -3,5 +3,5 @@ Hangman game implemented using Jack programming language (nand2tetris). Followin
 ```
 Difficulty levels - Easy, Medium and Hard.
 Questions from three different fields - Geography, General Knowledge and Technology.
-Two player mode available.
+Different Player Modes - Single Player Mode, Two Player Mode.
 ```
