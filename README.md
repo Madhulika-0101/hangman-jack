@@ -1,9 +1,7 @@
 # hangman-jack
-As the name explains, hangman game done using jack programming language (nand2tetris)
-
-Major classes in this project:
+Hangman game implemented using Jack programming language (nand2tetris). Following features are implemented:
 ```
-HangmanGame.jack
-Random.jack
-Time.jack
+Difficulty levels - Easy, Medium and Hard.
+Questions from three different fields - Geography, General Knowledge and Technology.
+Two player mode available.
 ```
