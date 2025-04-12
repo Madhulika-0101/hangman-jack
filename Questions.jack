@@ -21,24 +21,24 @@ class Questions {
 
 	constructor Questions new() {
 
-		let easyGeo = Array.new(20);
-		let easyGeoClues = Array.new(20);
-		let mediumGeo = Array.new(20);
-		let mediumGeoClues = Array.new(20);
-		let hardGeo = Array.new(20);
-		let hardGeoClues = Array.new(20);
-		let easyGK = Array.new(20);
-		let easyGKClues = Array.new(20);
-		let mediumGK = Array.new(20);
-		let mediumGKClues = Array.new(20);
-		let hardGK = Array.new(20);
-		let hardGKClues = Array.new(20);
-		let easyTech = Array.new(20);
-		let easyTechClues = Array.new(20);
-		let mediumTech = Array.new(20);
-		let mediumTechClues = Array.new(20);
-		let hardTech = Array.new(20);
-		let hardTechClues = Array.new(20);
+		let easyGeo = Array.new(10);
+		let easyGeoClues = Array.new(10);
+		let mediumGeo = Array.new(10);
+		let mediumGeoClues = Array.new(10);
+		let hardGeo = Array.new(10);
+		let hardGeoClues = Array.new(10);
+		let easyGK = Array.new(10);
+		let easyGKClues = Array.new(10);
+		let mediumGK = Array.new(10);
+		let mediumGKClues = Array.new(10);
+		let hardGK = Array.new(10);
+		let hardGKClues = Array.new(10);
+		let easyTech = Array.new(10);
+		let easyTechClues = Array.new(10);
+		let mediumTech = Array.new(10);
+		let mediumTechClues = Array.new(10);
+		let hardTech = Array.new(10);
+		let hardTechClues = Array.new(10);
 
                 return this;
 
@@ -60,16 +60,6 @@ class Questions {
 		let easyGeo[7] = "EUROPE";
 		let easyGeo[8] = "AUSTRALIA";
 		let easyGeo[9] = "BRAZIL";
-		let easyGeo[10] = "JAPAN";
-		let easyGeo[11] = "NORTH";
-		let easyGeo[12] = "ARCTIC";
-		let easyGeo[13] = "SOUTH";
-		let easyGeo[14] = "LONDON";
-		let easyGeo[15] = "DELHI";
-		let easyGeo[16] = "MAP";
-		let easyGeo[17] = "ISLAND";
-		let easyGeo[18] = "RIVER";
-		let easyGeo[19] = "MOUNTAIN";
 
 		return easyGeo; 
 
@@ -87,16 +77,6 @@ class Questions {
 		let easyGeoClues[7] = "Home to countries like France and Germany";
 		let easyGeoClues[8] = "Smallest continent and a country";
 		let easyGeoClues[9] = "Country known for the Amazon rainforest";
-		let easyGeoClues[10] = "Island nation in East Asia";
-		let easyGeoClues[11] = "Direction opposite of South";
-		let easyGeoClues[12] = "Ocean around the North Pole";
-		let easyGeoClues[13] = "Direction opposite of North";
-		let easyGeoClues[14] = "Capital city of the United Kingdom";
-		let easyGeoClues[15] = "Capital city of India";
-		let easyGeoClues[16] = "Used to represent geographical locations";
-		let easyGeoClues[17] = "Land surrounded by water";
-		let easyGeoClues[18] = "Natural stream of water flowing to the sea";
-		let easyGeoClues[19] = "High elevation landform";
 
 		return easyGeoClues; 
 
@@ -115,16 +95,6 @@ class Questions {
 		let mediumGeo[7] = "GANGES";
 		let mediumGeo[8] = "BAIKAL";
 		let mediumGeo[9] = "PENINSULA";
-		let mediumGeo[10] = "CANYON";
-		let mediumGeo[11] = "HIMALAYAS";
-		let mediumGeo[12] = "AMAZON";
-		let mediumGeo[13] = "DELTA";
-		let mediumGeo[14] = "MANGROVE";
-		let mediumGeo[15] = "CARIBBEAN";
-		let mediumGeo[16] = "BASIN";
-		let mediumGeo[17] = "VOLCANO";
-		let mediumGeo[18] = "TUNDRA";
-		let mediumGeo[19] = "MONSOON";
 
 		return mediumGeo; 
 
@@ -143,16 +113,6 @@ class Questions {
 		let mediumGeoClues[7] = "Sacred river in India";
 		let mediumGeoClues[8] = "Deepest freshwater lake";
 		let mediumGeoClues[9] = "Land surrounded by water on three sides";
-		let mediumGeoClues[10] = "Deep valley with steep sides";
-		let mediumGeoClues[11] = "Mountain range where Everest is located";
-		let mediumGeoClues[12] = "River with the largest discharge volume";
-		let mediumGeoClues[13] = "Landform at river mouth";
-		let mediumGeoClues[14] = "Coastal tree ecosystem";
-		let mediumGeoClues[15] = "Region with many islands and beaches";
-		let mediumGeoClues[16] = "Low area drained by a river";
-		let mediumGeoClues[17] = "Mountain that can erupt lava";
-		let mediumGeoClues[18] = "Cold, treeless biome";
-		let mediumGeoClues[19] = "Seasonal wind and rain pattern in South Asia";
 
 		return mediumGeoClues; 
 
@@ -171,16 +131,6 @@ class Questions {
 		let hardGeo[7] = "BIOME";
 		let hardGeo[8] = "GEOTHERMAL";
 		let hardGeo[9] = "TROPICANCER";
-		let hardGeo[10] = "TROPICCAPRICORN";
-		let hardGeo[11] = "EROSION";
-		let hardGeo[12] = "LITHOSPHERE";
-		let hardGeo[13] = "AQUIFER";
-		let hardGeo[14] = "ESTUARY";
-		let hardGeo[15] = "SEISMIC";
-		let hardGeo[16] = "CORIOLIS";
-		let hardGeo[17] = "TOPOGRAPHY";
-		let hardGeo[18] = "LONGITUDE";
-		let hardGeo[19] = "LATITUDE";
 
 		return hardGeo; 
 
@@ -199,16 +149,6 @@ class Questions {
 		let hardGeoClues[7] = "Large ecological area with specific climate and organisms";
 		let hardGeoClues[8] = "Heat energy from the Earth";
 		let hardGeoClues[9] = "Latitude line north of the Equator";
-		let hardGeoClues[10] = "Latitude line south of the Equator";
-		let hardGeoClues[11] = "Wearing away of land by wind or water";
-		let hardGeoClues[12] = "Earth's outer layer including the crust";
-		let hardGeoClues[13] = "Underground water storage";
-		let hardGeoClues[14] = "Where river meets the sea";
-		let hardGeoClues[15] = "Related to earthquakes";
-		let hardGeoClues[16] = "Effect that causes moving air to curve";
-		let hardGeoClues[17] = "Arrangement of natural and artificial features of land";
-		let hardGeoClues[18] = "Vertical geographic coordinate";
-		let hardGeoClues[19] = "Horizontal geographic coordinate";
 
 		return hardGeoClues; 
 
@@ -228,16 +168,6 @@ class Questions {
 		let easyGK[7] = "SCHOOL";
 		let easyGK[8] = "APPLE";
 		let easyGK[9] = "DOG";
-		let easyGK[10] = "CAT";
-		let easyGK[11] = "RAIN";
-		let easyGK[12] = "MILK";
-		let easyGK[13] = "CLOCK";
-		let easyGK[14] = "CHAIR";
-		let easyGK[15] = "TABLE";
-		let easyGK[16] = "HOUSE";
-		let easyGK[17] = "CAR";
-		let easyGK[18] = "ROAD";
-		let easyGK[19] = "FOOD";
 
 		return easyGK; 
 
@@ -255,17 +185,7 @@ class Questions {
 		let easyGKClues[6] = "Used to write";
 		let easyGKClues[7] = "Place where students learn";
 		let easyGKClues[8] = "Red or green fruit that keeps doctors away";
-		let easyGKClues[9] = "Man’s best friend";
-		let easyGKClues[10] = "Popular household pet that purrs";
-		let easyGKClues[11] = "Falls from clouds";
-		let easyGKClues[12] = "White drink from cows";
-		let easyGKClues[13] = "Tells the time";
-		let easyGKClues[14] = "Used to sit on";
-		let easyGKClues[15] = "Used to eat or work on";
-		let easyGKClues[16] = "Place where people live";
-		let easyGKClues[17] = "Vehicle with four wheels";
-		let easyGKClues[18] = "Path for cars and trucks";
-		let easyGKClues[19] = "Something you eat";
+		let easyGKClues[9] = "Mans best friend or commonly favourite pet";
 
 		return easyGKClues; 
 
@@ -284,16 +204,6 @@ class Questions {
 		let mediumGK[7] = "ECLIPSE";
 		let mediumGK[8] = "CURRENCY";
 		let mediumGK[9] = "CITIZEN";
-		let mediumGK[10] = "DEMOCRACY";
-		let mediumGK[11] = "CAPITAL";
-		let mediumGK[12] = "EQUATOR";
-		let mediumGK[13] = "METEOR";
-		let mediumGK[14] = "ORBIT";
-		let mediumGK[15] = "POLITICS";
-		let mediumGK[16] = "GOVERNMENT";
-		let mediumGK[17] = "GLACIER";
-		let mediumGK[18] = "JOURNALIST";
-		let mediumGK[19] = "ECONOMY";
 
 		return mediumGK; 
 
@@ -312,16 +222,6 @@ class Questions {
 		let mediumGKClues[7] = "Sun or moon gets blocked";
 		let mediumGKClues[8] = "Official money of a country";
 		let mediumGKClues[9] = "Legal member of a country";
-		let mediumGKClues[10] = "Government by the people";
-		let mediumGKClues[11] = "Main city of a country";
-		let mediumGKClues[12] = "Imaginary line around Earth’s middle";
-		let mediumGKClues[13] = "Space rock that burns in atmosphere";
-		let mediumGKClues[14] = "Path of one object around another";
-		let mediumGKClues[15] = "Activities of governance";
-		let mediumGKClues[16] = "System of ruling a country";
-		let mediumGKClues[17] = "Large mass of ice that moves slowly";
-		let mediumGKClues[18] = "Person who reports news";
-		let mediumGKClues[19] = "System of production and trade";
 
 		return mediumGKClues; 
 
@@ -340,16 +240,6 @@ class Questions {
 		let hardGK[7] = "SYMBOLISM";
 		let hardGK[8] = "ALGORITHM";
 		let hardGK[9] = "SATELLITE";
-		let hardGK[10] = "BIODIVERSITY";
-		let hardGK[11] = "MAGNETISM";
-		let hardGK[12] = "RADIATION";
-		let hardGK[13] = "EQUATION";
-		let hardGK[14] = "LITERATURE";
-		let hardGK[15] = "ARCHAEOLOGY";
-		let hardGK[16] = "PHYSICS";
-		let hardGK[17] = "CHEMISTRY";
-		let hardGK[18] = "UNIVERSE";
-		let hardGK[19] = "COSMOLOGY";
 
 		return hardGK; 
 
@@ -368,16 +258,6 @@ class Questions {
 		let hardGKClues[7] = "Use of symbols to represent ideas";
 		let hardGKClues[8] = "Step-by-step method to solve a problem";
 		let hardGKClues[9] = "Object that orbits planets or Earth";
-		let hardGKClues[10] = "Variety of life in the world or habitat";
-		let hardGKClues[11] = "Force that attracts certain metals";
-		let hardGKClues[12] = "Energy that travels as waves or particles";
-		let hardGKClues[13] = "Mathematical statement with equality";
-		let hardGKClues[14] = "Written works, especially artistic ones";
-		let hardGKClues[15] = "Study of ancient cultures via artifacts";
-		let hardGKClues[16] = "Study of matter and energy";
-		let hardGKClues[17] = "Study of substances and reactions";
-		let hardGKClues[18] = "All space, time, and matter";
-		let hardGKClues[19] = "Study of the origin and structure of the universe";
 
 		return hardGKClues; 
 
@@ -397,16 +277,6 @@ class Questions {
 		let easyTech[7] = "SOFTWARE";
 		let easyTech[8] = "HARDWARE";
 		let easyTech[9] = "ALGORITHM";
-		let easyTech[10] = "DATABASE";
-		let easyTech[11] = "NETWORK";
-		let easyTech[12] = "PROCESSOR";
-		let easyTech[13] = "STORAGE";
-		let easyTech[14] = "BROWSER";
-		let easyTech[15] = "CACHE";
-		let easyTech[16] = "FIREWALL";
-		let easyTech[17] = "ENCRYPTION";
-		let easyTech[18] = "CLOUD";
-		let easyTech[19] = "ROUTER";
 
 		return easyTech; 
 
@@ -425,16 +295,6 @@ class Questions {
 		let easyTechClues[7] = "Programs and operating information for a computer";
 		let easyTechClues[8] = "Physical components of a computer system";
 		let easyTechClues[9] = "Step-by-step procedure to solve a problem";
-		let easyTechClues[10] = "Organized collection of structured information";
-		let easyTechClues[11] = "System of interconnected computers";
-		let easyTechClues[12] = "Brain of the computer that executes instructions";
-		let easyTechClues[13] = "Medium used to store digital data permanently";
-		let easyTechClues[14] = "Software used to access the internet";
-		let easyTechClues[15] = "Small, fast memory that stores frequently used data";
-		let easyTechClues[16] = "Security system that controls network traffic";
-		let easyTechClues[17] = "Process of converting data into a secure format";
-		let easyTechClues[18] = "Online storage and computing service";
-		let easyTechClues[19] = "Device that directs data packets across networks";
 
 		return easyTechClues; 
 
@@ -453,16 +313,6 @@ class Questions {
 		let mediumTech[7] = "GIGABYTE";
 		let mediumTech[8] = "VIRTUAL";
 		let mediumTech[9] = "COMMAND";
-		let mediumTech[10] = "UPLOAD";
-		let mediumTech[11] = "DOWNLOAD";
-		let mediumTech[12] = "KEYLOGGER";
-		let mediumTech[13] = "ANALYTICS";
-		let mediumTech[14] = "FIRMWARE";
-		let mediumTech[15] = "ETHERNET";
-		let mediumTech[16] = "IPADDRESS";
-		let mediumTech[17] = "BACKUP";
-		let mediumTech[18] = "DRIVER";
-		let mediumTech[19] = "SPREADSHEET";
 
 		return mediumTech; 
 
@@ -481,16 +331,6 @@ class Questions {
 		let mediumTechClues[7] = "Unit of digital information storage";
 		let mediumTechClues[8] = "Something that is simulated digitally";
 		let mediumTechClues[9] = "Instruction given to a computer";
-		let mediumTechClues[10] = "Transfer data to another system";
-		let mediumTechClues[11] = "Receive data from another system";
-		let mediumTechClues[12] = "Records keystrokes made by a user";
-		let mediumTechClues[13] = "Data analysis to find patterns";
-		let mediumTechClues[14] = "Software permanently stored in hardware";
-		let mediumTechClues[15] = "Wired networking technology";
-		let mediumTechClues[16] = "Unique identifier for a device on a network";
-		let mediumTechClues[17] = "Copy of data stored separately";
-		let mediumTechClues[18] = "Software that controls hardware";
-		let mediumTechClues[19] = "Grid-based file for organizing data";
 
 		return mediumTechClues; 
 
@@ -509,16 +349,6 @@ class Questions {
 		let hardTech[7] = "LATENCY";
 		let hardTech[8] = "BITRATE";
 		let hardTech[9] = "DEFRAGMENT";
-		let hardTech[10] = "VIRTUALIZATION";
-		let hardTech[11] = "BANDWIDTH";
-		let hardTech[12] = "PREDICTION";
-		let hardTech[13] = "TOKENIZATION";
-		let hardTech[14] = "MIDDLEWARE";
-		let hardTech[15] = "CONTAINER";
-		let hardTech[16] = "BACKDOOR";
-		let hardTech[17] = "PHISHING";
-		let hardTech[18] = "INJECTION";
-		let hardTech[19] = "BIOMETRICS";
 
 		return hardTech; 
 
@@ -537,16 +367,6 @@ class Questions {
 		let hardTechClues[7] = "Delay in data processing";
 		let hardTechClues[8] = "Rate of data transfer";
 		let hardTechClues[9] = "Reorganize storage to improve speed";
-		let hardTechClues[10] = "Simulating hardware with software";
-		let hardTechClues[11] = "Maximum data transfer rate";
-		let hardTechClues[12] = "Forecasting outcomes using data";
-		let hardTechClues[13] = "Replacing sensitive data with symbols";
-		let hardTechClues[14] = "Software that connects applications";
-		let hardTechClues[15] = "Standard unit of software for deployment";
-		let hardTechClues[16] = "Hidden way to bypass security";
-		let hardTechClues[17] = "Fraudulent attempt to get sensitive info";
-		let hardTechClues[18] = "Exploiting data input flaws";
-		let hardTechClues[19] = "Authentication based on biological traits";
 
 		return hardTechClues; 
 
