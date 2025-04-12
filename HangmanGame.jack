@@ -8,66 +8,126 @@ class HangmanGame {
     field int player1Score;
     field int player2Score;
     field int currentPlayer;
+    field Questions questionSet;
 
     constructor HangmanGame new() {
         let words = Array.new(20);
         let clues = Array.new(20);
         let guessedLetters = Array.new(26);
-        
-        let words[1] = "PROGRAM";     
-        let clues[1] = "Set of instructions for a computer";
-        let words[0] = "COMPUTER";    
-        let clues[0] = "Electronic device for processing data";
-        let words[2] = "KEYBOARD";    
-        let clues[2] = "Input device with letters";
-        let words[3] = "MONITOR";     
-        let clues[3] = "Display device";    
-        let words[4] = "MEMORY";      
-        let clues[4] = "Stores data and programs";
-        let words[5] = "ALGORITHM";   
-        let clues[5] = "A step-by-step problem-solving procedure";
-        let words[6] = "SOFTWARE";    
-        let clues[6] = "Collection of data/programs used by computers";
-        let words[7] = "HARDWARE";
-        let clues[7] = "Physical components of a computer system";
-        let words[8] = "MOUSE";       
-        let clues[8] = "Pointing device for computer interaction";
-        let words[9] = "PRINTER";     
-        let clues[9] = "Produces hard copies of digital documents";
-        let words[10] = "DATABASE";   
-        let clues[10] = "Structured electronic data collection";
-        let words[11] = "NETWORK";    
-        let clues[11] = "System connecting multiple computers";
-        let words[12] = "SECURITY";   
-        let clues[12] = "Measures to protect data/systems";
-        let words[13] = "INTERNET";   
-        let clues[13] = "Global network of devices";
-        let words[14] = "BROWSER";    
-        let clues[14] = "Software to access the World Wide Web";
-        let words[15] = "SERVER";     
-        let clues[15] = "Computer providing data to others";
-        let words[16] = "FIREWALL";   
-        let clues[16] = "Network traffic security system";
-        let words[17] = "ROUTER";     
-        let clues[17] = "Device connecting multiple networks";
-        let words[18] = "CLOUD";      
-        let clues[18] = "Remote servers for data storage/processing";
-        let words[19] = "ENCRYPTION"; 
-        let clues[19] = "Process of converting data to secure format";
-        
+        let mistakes = 0;
+        let questionSet = Questions.new();
         let player1Score = 0;
         let player2Score = 0;
         return this;
     }
 
+    method void choosedifficultyLevel() {
+        var int key1;
+        var int key2;
+        var int index;
+
+        do Screen.clearScreen();
+
+        do Output.moveCursor(9, 22);
+        do Output.printString("Choose Difficulty Level:");
+        do Output.moveCursor(11, 24);
+        do Output.printString("Press E for Easy");
+        do Output.moveCursor(12, 24);
+        do Output.printString("Press M for Medium");
+        do Output.moveCursor(13, 24);
+        do Output.printString("Press H for Hard");
+        do Output.println();
+
+        // Read Key Input
+        let key1 = Keyboard.readChar();
+
+        do Screen.clearScreen();  // Clear the screen before showing next menu
+        do Output.moveCursor(9, 22);
+        do Output.printString("Choose the Field:");
+        do Output.moveCursor(11, 24);
+        do Output.printString("Press 1 for Geography");
+        do Output.moveCursor(12, 24);
+        do Output.printString("Press 2 for General Knowledge");
+        do Output.moveCursor(13, 24);
+        do Output.printString("Press 3 for Technology");
+        do Output.println();
+    
+        // Read Key Input
+        let key2 = Keyboard.readChar();
+    
+        // Easy difficulty (E key)
+        if (key1 = 69) {
+            // Geography (1 key)
+            if (key2 = 49) {
+                let clues = questionSet.easyGeoClues();
+                let words = questionSet.easyGeo();
+            }
+            // General Knowledge (2 key)
+            if (key2 = 50) {
+                let clues = questionSet.easyGKClues();
+                let words = questionSet.easyGK();
+            }
+            // Technology (3 key)
+            if (key2 = 51) {
+                let clues = questionSet.easyTechClues();
+                let words = questionSet.easyTech();
+            }
+        }
+    
+        // Medium difficulty (M key)
+        if (key1 = 77) {
+            // Geography (1 key)
+            if (key2 = 49) {
+                let clues = questionSet.mediumGeoClues();
+                let words = questionSet.mediumGeo();
+            }
+            // General Knowledge (2 key)
+            if (key2 = 50) {
+                let clues = questionSet.mediumGKClues();
+                let words = questionSet.mediumGK();
+            }
+            // Technology (3 key)
+            if (key2 = 51) {
+                let clues = questionSet.mediumTechClues();
+                let words = questionSet.mediumTech();
+            }
+        }
+        
+        // Hard difficulty (H key)
+        if (key1 = 72) {
+            // Geography (1 key)
+            if (key2 = 49) {
+                let clues = questionSet.hardGeoClues();
+                let words = questionSet.hardGeo();
+            }
+            // General Knowledge (2 key)
+            if (key2 = 50) {
+                let clues = questionSet.hardGKClues();
+                let words = questionSet.hardGK();
+            }
+            // Technology (3 key)
+            if (key2 = 51) {
+                let clues = questionSet.hardTechClues();
+                let words = questionSet.hardTech();
+            }
+        }
+        
+        return;
+    }
+
     method void run() {
+        var int index;
         var int i;
         var boolean success;
         
         let currentPlayer = 1;
         let i = 0;
         while (i < 10) {
-            let currentWord = selectRandomWord();
+            do choosedifficultyLevel();
+
+            let index = Random.randRange(20);
+            let currentWord = words[index];
+            let currentClue = clues[index];
             do Screen.clearScreen();
             let success = playWord();
             
@@ -75,19 +135,50 @@ class HangmanGame {
                 let player1Score = player1Score + 1;
             }
             
-            do Output.moveCursor(10, 25);
-            do Output.printString("Player 1 Score: ");
-            do Output.printInt(player1Score);
-            do Output.println();
-            do Output.printString("Press any key for next word...");
+            if (checkWordComplete()) {
+
+                do Screen.clearScreen();
+                do Output.moveCursor(10, 25);
+                do Output.printString("Good Job!");
+                do Output.println();
+                do Output.moveCursor(11, 22);
+                do Output.printString("Player 1 Score: ");
+                do Output.printInt(player1Score);
+                do Output.println();
+                do Output.moveCursor(12, 15);
+		do Output.printString("Press any key to continue: ");
+
+            } else {
+                do Screen.clearScreen();
+                do Output.moveCursor(10, 15);
+                do Output.printString("Better Luck Next Time!");
+                do Output.println();
+                do Output.moveCursor(10, 15);
+                do Output.printString("Game Over! The word was: ");
+                do Output.printString(currentWord);
+                do Output.println();
+                do Output.moveCursor(11, 15);
+                do Output.printString("Player 1 Score: ");
+                do Output.printInt(player1Score);
+                do Output.println();
+                do Output.moveCursor(12, 15);
+		do Output.printString("Press any key to continue: ");
+
+            }
+
             do Keyboard.readChar();
             let i = i + 1;
+
         }
         
         let currentPlayer = 2;
         let i = 0;
         while (i < 10) {
-            let currentWord = selectRandomWord();
+            do choosedifficultyLevel();
+
+            let index = Random.randRange(20);
+            let currentWord = words[index];
+            let currentClue = clues[index];
             do Screen.clearScreen();
             let success = playWord();
             
@@ -95,13 +186,40 @@ class HangmanGame {
                 let player2Score = player2Score + 1;
             }
             
-            do Output.moveCursor(10, 25);
-            do Output.printString("Player 2 Score: ");
-            do Output.printInt(player2Score);
-            do Output.println();
-            do Output.printString("Press any key for next word...");
+            if (checkWordComplete()) {
+
+                do Screen.clearScreen();
+                do Output.moveCursor(10, 25);
+                do Output.printString("Good Job!");
+                do Output.println();
+                do Output.moveCursor(11, 22);
+                do Output.printString("Player 2 Score: ");
+                do Output.printInt(player2Score);
+                do Output.println();
+                do Output.moveCursor(12, 15);
+		do Output.printString("Press any key to continue: ");
+
+            } else {
+                do Screen.clearScreen();
+                do Output.moveCursor(10, 15);
+                do Output.printString("Better Luck Next Time!");
+                do Output.println();
+                do Output.moveCursor(10, 15);
+                do Output.printString("Game Over! The word was: ");
+                do Output.printString(currentWord);
+                do Output.println();
+                do Output.moveCursor(11, 15);
+                do Output.printString("Player 2 Score: ");
+                do Output.printInt(player2Score);
+                do Output.println();
+                do Output.moveCursor(12, 15);
+		do Output.printString("Press any key to continue: ");
+
+            }
+
             do Keyboard.readChar();
             let i = i + 1;
+
         }
         
         do Screen.clearScreen();
@@ -119,13 +237,7 @@ class HangmanGame {
         do Keyboard.readChar();
         
         return;
-        }
 
-    method String selectRandomWord() {
-        var int index;
-        let index = Random.randRange(20);
-        let currentClue = clues[index];
-        return words[index];
     }
 
     method boolean playWord() {
