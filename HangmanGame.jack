@@ -10,8 +10,7 @@ class HangmanGame {
     field int currentPlayer;
     field Questions questionSet;
     static int score;
-    field int startTime;
-    field int currentTime;
+    field int currentDifficulty;
 
     constructor HangmanGame new() {
         let words = Array.new(10);
@@ -58,6 +57,7 @@ class HangmanGame {
     
         // Easy difficulty (E key)
         if (key1 = 69) {
+	    let currentDifficulty = 1;
             // Geography (1 key)
             if (key2 = 49) {
                 let clues = questionSet.easyGeoClues();
@@ -77,6 +77,7 @@ class HangmanGame {
     
         // Medium difficulty (M key)
         if (key1 = 77) {
+	    let currentDifficulty = 2;
             // Geography (1 key)
             if (key2 = 49) {
                 let clues = questionSet.mediumGeoClues();
@@ -96,6 +97,7 @@ class HangmanGame {
         
         // Hard difficulty (H key)
         if (key1 = 72) {
+	    let currentDifficulty = 3;
             // Geography (1 key)
             if (key2 = 49) {
                 let clues = questionSet.hardGeoClues();
@@ -180,7 +182,6 @@ class HangmanGame {
             let wordCompleted = false;
             let mistakes = 0;
             do resetGuessedLetters();
-            let startTime = Time.getTime();
 
             while (~wordCompleted) {
                 if (mistakes < 7) {
@@ -198,10 +199,32 @@ class HangmanGame {
                 }
             }
             
-            let currentTime = Time.getTime() - startTime;
+	    do Time.getTime();
             
             if (checkWordComplete()) {
-                let score = score + 1;
+
+		if (currentDifficulty = 1) {
+
+			let score = score + 1;
+
+		}
+
+		else {
+
+			if (currentDifficulty = 2) {
+
+				let score = score + 2;
+
+			}
+
+			else {
+
+				let score = score + 3;
+
+			}
+
+		}
+
                 do Screen.clearScreen();
                 do Output.moveCursor(10, 25);
                 do Output.printString("Good Job!");
@@ -212,7 +235,9 @@ class HangmanGame {
                 do Output.println();
                 do Output.moveCursor(12, 22);
                 do Output.printString("Play again? (Y/N)");
+
             } else {
+
                 do Screen.clearScreen();
                 do Output.moveCursor(10, 15);
                 do Output.printString("Better Luck Next Time!");
@@ -249,6 +274,8 @@ class HangmanGame {
         let i = 0;
         while (i < 5) {
 
+            do Time.getTime();
+
             do Screen.clearScreen();
 
             do Output.moveCursor(8, 28);
@@ -263,10 +290,30 @@ class HangmanGame {
             let success = playWord();
             
             if (success) {
-                let player1Score = player1Score + 1;
+
+		if (currentDifficulty = 1) {
+
+			let player1Score = player1Score + 1;
+
+		}
+
+		else {
+
+			if (currentDifficulty = 2) {
+
+				let player1Score = player1Score + 2;
+
+			}
+
+			else {
+
+				let player1Score = player1Score + 3;
+
+			}
+
+		}
+
             }
-            
-            let currentTime = Time.getTime() - startTime;
 
             if (checkWordComplete()) {
 
@@ -308,6 +355,8 @@ class HangmanGame {
         let i = 0;
         while (i < 5) {
 
+            do Time.getTime();
+
             do Screen.clearScreen();
 
             do Output.moveCursor(8, 28);
@@ -322,10 +371,30 @@ class HangmanGame {
             let success = playWord();
             
             if (success) {
-                let player2Score = player2Score + 1;
-            }
 
-            let currentTime = Time.getTime() - startTime;
+		if (currentDifficulty = 1) {
+
+			let player2Score = player2Score + 1;
+
+		}
+
+		else {
+
+			if (currentDifficulty = 2) {
+
+				let player2Score = player2Score + 2;
+
+			}
+
+			else {
+
+				let player2Score = player2Score + 3;
+
+			}
+
+		}
+
+            }
             
             if (checkWordComplete()) {
 
@@ -545,7 +614,11 @@ class HangmanGame {
     }
 
     method void resetGuessedLetters() {
+
         var int i;
+
+        do Time.getTime();
+
         let i = 0;
         while (i < 26) {
             let guessedLetters[i] = 0;
